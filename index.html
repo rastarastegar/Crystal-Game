@@ -20,34 +20,78 @@
     <section class="main-section">
       <h1>Crystal Game</h1>
       <!-- <img src="assets/images/technics-q-c-640-480-2.jpg" class="auth-image" alt="Word Guess Game"> -->
-      <p>Match the number and win!!!</p>
+      <p> Match the number and win!!! </p>
       <br>
       <div class="container">
           <div class="row">
             <div class="col-md-offset-1 col-md-8">
-              <div class="jumbotron">
-                  
+              <div class="jumbotron">                  
                 <h2>
-                    <script type="text/javascript">
+                    <script type="text/javascript"> 
 
-                    const assumedNumbers = [ 22, 35, 58, 84, 99, 111];
-                    const evenNumbers = [ 2, 4, 6, 8, ];
-                    const oddNumbers = [ 1 , 3, 5,  7, 9, ];
-                    var amethyst = 0 , crystal = 0 , jewel = 0, swarovski = 0 ;
-                    var oneAssumedNumber = assumedNumbers[Math.floor(Math.random()*assumedNumbers.length)];
-                    // console.log("Randomly Generated Number is:" + oneAssumedNumber);
-                    document.write("Randomly Generated Number is:   "+ oneAssumedNumber);
+                    const assumedNumbers = [ 22, 23,  35, 37, 41, 58, 84, 99, 111, 119];
+
+                    const amethystNumbers = [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ];
+                    const crystalNumbers = [ 1 , 3, 5,  7, 9, 11, 13, 15, 17, 19, 21 ];
+                    const jewelNumbers = [ 3, 6, 9, 12, 15, 18, 21];
+                    const swarovskiNumbers = [ 5, 10, 15, 20];
+                    madeNumber = 0; // this is the number on the making by clicking the icons.
+                    
+                    var oneAssumedNumber = assumedNumbers[Math.floor(Math.random()*assumedNumbers.length)]; // randomly selected number
+
+                    var amethyst = amethystNumbers[Math.floor(Math.random()*amethystNumbers.length)];
+                    console.log("this is amethyst randomly selected number " + amethyst);
+                    var crystal = crystalNumbers[Math.floor(Math.random()*crystalNumbers.length)];
+                    console.log("this is crystal randomly selected number " + crystal);
+                    var jewel = jewelNumbers[Math.floor(Math.random()*jewelNumbers.length)];
+                    console.log("this is jewel randomly selected number " + jewel);
+                    var swarovski = swarovskiNumbers[Math.floor(Math.random()*swarovskiNumbers.length)];
+                    console.log("this is swarovski randomly selected number " + swarovski);                                        
+                    document.write("Randomly Generated Number is:  "+ oneAssumedNumber); 
+                    
+                    function jewelcounter() {
+                       madeNumber = jewel + madeNumber ; 
+                      console.log("jewelcounter is working " + madeNumber);                    
+                    }
+
+                    function crystalcounter() {
+                       madeNumber = crystal + madeNumber ; 
+                      console.log("crystalcounter is working " + madeNumber);                    
+                    }
+
+                    function swarovskicounter() {
+                       madeNumber = swarovski + madeNumber; 
+                      console.log("swarovskicounter is working " + madeNumber);                    
+                    }
+
+                    function amethystcounter() {
+                       madeNumber = amethyst + madeNumber; 
+                      console.log("amethystcounter is working " + madeNumber);                    
+                    }
+                    
+                    
+
+                    // while( madeNumber <= oneAssumedNumber ) {
+
+                     
+                    //   // document.write("this is when crystal is pressed   " + madeNumber)   ;
+                    //   // console.log("this is jewel after its function run " + jewel);
+
+                    //   break
+                    
+                    // }
 
                     </script>
               </div>
+              <script>document.write("Your Number is:  "+ madeNumber)</script>
             </div>
           </div>
         </div>
-        <img src="crystal.jpg" alt="crystal" style="width:180px">
-        <img src="jewel.jpg" alt="jewel" style="width:150px">
-        <img src="swarovski.jpg" alt="swarovski" style="width:130px">
-        <img src="amethyst.jpg" alt="amethyst" style="width:150px" >
-        
+        <button onclick="crystalcounter()"><img src="crystal.jpg" alt="crystal" style="width:120px">crystal</button>
+        <button onclick="jewelcounter()"><img src="jewel.jpg" alt="jewel" style="width:100px">jewel</button>        
+        <button onclick="swarovskicounter()"><img src="swarovski.jpg" alt="swarovski" style="width:80px">swarovski</button>
+        <button onclick="amethystcounter()"><img src="amethyst.jpg" alt="amethyst" style="width:100px" >amethyst</button>       
+       
     </section>
   </div>
 
